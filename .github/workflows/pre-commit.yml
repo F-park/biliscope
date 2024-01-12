@@ -3,16 +3,23 @@ name: pre-commit
 on:
   pull_request:
   push:
-    branches: [master, test_ci_*]
+    branches:
+      - master
+      - test_ci_*
 
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
         with:
+          python-version: "3.11"
           cache: "pip"
+
       - uses: pre-commit/action@v3.0.0
+        continue-on-error: true
 
       - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Fix by pre-commit ci
