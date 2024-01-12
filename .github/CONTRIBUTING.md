@@ -35,7 +35,7 @@ function main(args) {
 
 ## 贡献代码
 
-> [TIP]
+> [!TIP]
 > 如果你还不会使用`git`，建议你观看[这个视频](https://www.bilibili.com/video/BV19e4y1q7JJ/)。
 
 ### 克隆代码到本地
@@ -60,7 +60,7 @@ git checkout -b <功能分支的名字>
 
 #### `github actions`
 
-> [TIP]
+> [!TIP]
 > 在测试前先`commit`你当前的修改，但不要`push`，测试成功后，再`checkout`回当前分支`push`。
 
 1. 创建一个测试分支`test_ci_<要测试的ci名>`
@@ -76,3 +76,9 @@ git checkout -b <功能分支的名字>
 ### 发起`Pull Request`（拉取请求）
 
 你需要向`gaogaotiantian/viztracer`的`master`分支发起一个`Pull Request`（拉取请求），我会尽快审查代码并给予反馈。
+
+> [!TIP]
+> 如果你发现`Pull Request`后，`github-actions[bot]`修复了你的`commit`。那么在下次`commit`前，你要先进行以下操作，否则会发生合并冲突。
+> ```
+> git pull origin <功能分支的名字>
+> ```
